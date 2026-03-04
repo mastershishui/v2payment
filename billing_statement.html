@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing Statement - USIS Payment System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="9" y1="9" x2="15" y2="9"></line>
+                        <line x1="9" y1="15" x2="15" y2="15"></line>
+                    </svg>
+                </div>
+                <div class="app-info">
+                    <h2>USIS</h2>
+                    <p>Payment &amp; Accounting Sub-System</p>
+                </div>
+                <button class="close-sidebar" onclick="toggleSidebar()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">STUDENT MODULES</div>
+                <a href="Assessment_of_Fees.html" class="nav-item">
+                    <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="9" y1="9" x2="15" y2="9"></line>
+                        <line x1="9" y1="15" x2="15" y2="15"></line>
+                    </svg>
+                    <span>Assessment of Fees</span>
+                </a>
+                <a href="Billing_Statement.html" class="nav-item active">
+                    <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                    <span>Billing Statement</span>
+                    <div class="active-indicator"></div>
+                </a>
+                <a href="Payment_Submission.html" class="nav-item">
+                    <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="2" y1="10" x2="22" y2="10"></line>
+                    </svg>
+                    <span>Payment Submission</span>
+                </a>
+                <a href="Payment_History.html" class="nav-item">
+                    <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span>Payment History</span>
+                </a>
+                <a href="Scholarships.html" class="nav-item">
+                    <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <span>Scholarships</span>
+                </a>
+            </nav>
+
+            <div class="user-profile">
+                <div class="user-info">
+                    <div class="name">CURRENT ROLE</div>
+                    <div class="id">Student</div>
+                </div>
+            </div>
+            <div class="switch-view-container">
+                <button class="switch-view-btn" onclick="goToStaffView()">
+                    Switch to Staff View
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="left-section">
+                    <button class="menu-btn" onclick="toggleSidebar()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                    <h1>Billing Statement</h1>
+                </div>
+                <div class="right-section">
+                    <button class="icon-btn" onclick="toggleNotifications(); loadNotifications();">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="badge"></span>
+                    </button>
+                    <div class="profile-dropdown">
+                        <div class="avatar-sm"></div>
+                    </div>
+                    <div class="user-info-compact">
+                        <div class="user-name">Juan Dela Cruz</div>
+                        <div class="user-role">Student</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Content -->
+            <div class="page-container">
+                <div class="page-header">
+                    <div>
+                        <h2>Billing Statement</h2>
+                        <p>Statement of Account and Balance Summary</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn btn-outline" onclick="downloadPDF()">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Download PDF
+                        </button>
+                        <button class="btn btn-primary" onclick="window.print()">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                                <rect x="6" y="14" width="12" height="8"></rect>
+                            </svg>
+                            Print Statement
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Summary Cards - Matching prototype -->
+                <div class="stats-grid animate-fade-in">
+                    <!-- Total Tuition Card -->
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <span class="stat-label">TOTAL TUITION</span>
+                            <span class="stat-value">₱ 31,500.00</span>
+                        </div>
+                        <div class="stat-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="9" y1="9" x2="15" y2="9"></line>
+                                <line x1="9" y1="15" x2="15" y2="15"></line>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Misc & Other Fees Card -->
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <span class="stat-label">MISC & OTHER FEES</span>
+                            <span class="stat-value">₱ 7,650.00</span>
+                        </div>
+                        <div class="stat-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 6v6l4 2"></path>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Scholarship Discount Card -->
+<div class="stat-card">
+    <div class="stat-info">
+        <span class="stat-label">SCHOLARSHIP DISCOUNT</span>
+        <span class="stat-value">₱ 15,750.00</span>  <!-- This will be updated by JavaScript -->
+    </div>
+    <div class="stat-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+        </svg>
+    </div>
+</div>
+
+                    <!-- Current Balance Card -->
+                    <div class="stat-card highlight-card">
+                        <div class="stat-info">
+                            <span class="stat-label text-white-50">CURRENT BALANCE</span>
+                            <span class="stat-value text-white">₱ 8,400.00</span>
+                        </div>
+                        <div class="stat-icon bg-white-20">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+              <!-- Statement of Account Table -->
+<div class="content-card animate-fade-in">
+    <div class="card-header">
+        <h3>Statement of Account</h3>
+        
+    </div>
+    <div class="table-responsive">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th style="width: 30%;">Transaction / Description</th>
+                    <th style="width: 35%;">NOTE</th>
+                    <th style="width: 17.5%;" class="text-right">DEBIT</th>
+                    <th style="width: 17.5%;" class="text-right">CREDIT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Tuition Fee -->
+                <tr>
+                    <td>
+                        <div class="cell-group">
+                            <span class="font-medium">Tuition Fee</span>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="sub-text">21 Units @ ₱1,500/unit</span>
+                    </td>
+                    <td class="text-right font-mono debit-amount">₱ 31,500.00</td>
+                    <td class="text-right font-mono credit-amount">—</td>
+                </tr>
+                
+                <!-- Laboratory Fee -->
+                <tr>
+                    <td>
+                        <div class="cell-group">
+                            <span class="font-medium">Laboratory Fee</span>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="sub-text">Computer Lab (3 subjects)</span>
+                    </td>
+                    <td class="text-right font-mono debit-amount">₱ 4,500.00</td>
+                    <td class="text-right font-mono credit-amount">—</td>
+                </tr>
+                
+                <!-- Library Fee -->
+                <tr>
+                    <td>
+                        <div class="cell-group">
+                            <span class="font-medium">Library Fee</span>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="sub-text">Semestral Fee</span>
+                    </td>
+                    <td class="text-right font-mono debit-amount">₱ 1,500.00</td>
+                    <td class="text-right font-mono credit-amount">—</td>
+                </tr>
+                
+                <!-- Medical/Dental -->
+                <tr>
+                    <td>
+                        <div class="cell-group">
+                            <span class="font-medium">Medical/Dental</span>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="sub-text">Health Services</span>
+                    </td>
+                    <td class="text-right font-mono debit-amount">₱ 800.00</td>
+                    <td class="text-right font-mono credit-amount">—</td>
+                </tr>
+                
+                <!-- Athletic Fee -->
+                <tr>
+                    <td>
+                        <div class="cell-group">
+                            <span class="font-medium">Athletic Fee</span>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="sub-text">Sports Development</span>
+                    </td>
+                    <td class="text-right font-mono debit-amount">₱ 500.00</td>
+                    <td class="text-right font-mono credit-amount">—</td>
+                </tr>
+                
+                <!-- Student Council -->
+                <tr>
+                    <td>
+                        <div class="cell-group">
+                            <span class="font-medium">Student Council</span>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="sub-text">Organization Fund</span>
+                    </td>
+                    <td class="text-right font-mono debit-amount">₱ 200.00</td>
+                    <td class="text-right font-mono credit-amount">—</td>
+                </tr>
+                
+                <!-- Insurance -->
+                <tr>
+                    <td>
+                        <div class="cell-group">
+                            <span class="font-medium">Insurance</span>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="sub-text">Student Accident Insurance</span>
+                    </td>
+                    <td class="text-right font-mono debit-amount">₱ 150.00</td>
+                    <td class="text-right font-mono credit-amount">—</td>
+                </tr>
+                
+                <!-- Scholarship: Academic Excellence - Green -->
+                <tr class="row-bg-emerald">
+                    <td>
+                        <div class="cell-group">
+                            <span class="font-medium">Scholarship: Academic Excellence</span>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="sub-text">Applied Discount</span>
+                    </td>
+                    <td class="text-right font-mono debit-amount">—</td>
+                    <td class="text-right font-mono scholarship-amount">₱ 15,750.00</td>
+                </tr>
+                
+                <!-- Payment: GCash - Blue -->
+                <tr class="row-bg-blue">
+                    <td>
+                        <div class="cell-group">
+                            <span class="font-medium">Payment: GCash</span>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="sub-text">Ref: GC-928371239</span>
+                    </td>
+                    <td class="text-right font-mono debit-amount">—</td>
+                    <td class="text-right font-mono payment-amount">₱ 5,000.00</td>
+                </tr>
+                
+                <!-- Payment: Bank Transfer - Blue -->
+                <tr class="row-bg-blue">
+                    <td>
+                        <div class="cell-group">
+                            <span class="font-medium">Payment: Bank Transfer</span>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="sub-text">Ref: BDO-827361</span>
+                    </td>
+                    <td class="text-right font-mono debit-amount">—</td>
+                    <td class="text-right font-mono payment-amount">₱ 5,000.00</td>
+                </tr>
+                
+                <!-- Total Row -->
+                <tr class="row-total">
+                    <td colspan="2" class="label-total">OUTSTANDING BALANCE</td>
+                    <td class="text-right font-mono"></td>
+                    <td class="text-right value-total font-mono">₱ 8,400.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+               
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleSidebar()"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

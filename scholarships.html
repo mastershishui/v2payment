@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarships & Discounts - USIS Payment System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="9" y1="9" x2="15" y2="9"></line>
+                        <line x1="9" y1="15" x2="15" y2="15"></line>
+                    </svg>
+                </div>
+                <div class="app-info">
+                    <h2>USIS</h2>
+                    <p>Payment &amp; Accounting Sub-System</p>
+                </div>
+                <button class="close-sidebar" onclick="toggleSidebar()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">STUDENT MODULES</div>
+                <a href="assessment_of_fees.html" class="nav-item">
+                    <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="9" y1="9" x2="15" y2="9"></line>
+                        <line x1="9" y1="15" x2="15" y2="15"></line>
+                    </svg>
+                    <span>Assessment of Fees</span>
+                </a>
+                <a href="billing_statement.html" class="nav-item">
+                    <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                    <span>Billing Statement</span>
+                </a>
+                <a href="payment_submission.html" class="nav-item">
+                    <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="5" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="2" y1="10" x2="22" y2="10"></line>
+                    </svg>
+                    <span>Payment Submission</span>
+                </a>
+                <a href="payment_history.html" class="nav-item">
+                    <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span>Payment History</span>
+                </a>
+                <a href="scholarships.html" class="nav-item active">
+                    <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <span>Scholarships</span>
+                    <div class="active-indicator"></div>
+                </a>
+            </nav>
+
+            <div class="user-profile">
+                <div class="user-info">
+                    <div class="name">CURRENT ROLE</div>
+                    <div class="id">Student</div>
+                </div>
+            </div>
+            <div class="switch-view-container">
+                <button class="switch-view-btn" onclick="goToStaffView()">
+                    Switch to Staff View
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="left-section">
+                    <button class="menu-btn" onclick="toggleSidebar()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                    <h1>Scholarships &amp; Discounts</h1>
+                </div>
+                <div class="right-section">
+                    <button class="icon-btn" onclick="toggleNotifications(); loadNotifications();">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="badge"></span>
+                    </button>
+                    <div class="profile-dropdown">
+                        <div class="avatar-sm"></div>
+                    </div>
+                    <div class="user-info-compact">
+                        <div class="user-name">Juan Dela Cruz</div>
+                        <div class="user-role">Student</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Content -->
+            <div class="page-container">
+                <div class="page-header">
+                    <div>
+                        <h2>Scholarships &amp; Discounts</h2>
+                        <p>Financial Aid and Discount Programs</p>
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="scholarship-tabs" id="scholarshipTabs">
+                    <button class="tab-link active" type="button" data-tab="my" onclick="switchScholarshipTab('my')">My Scholarships</button>
+                    <button class="tab-link" type="button" data-tab="apply" onclick="switchScholarshipTab('apply')">Apply for Scholarship</button>
+                </div>
+
+                <!-- Tab: My Scholarships -->
+<div id="scholarshipTabMy">
+    <!-- Explore More Grants Card - NOW FIRST -->
+    <div style="margin-bottom: 2rem;">
+        <div class="scholarship-secondary-card">
+            <div class="scholarship-secondary-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"></path>
+                </svg>
+            </div>
+            <div class="scholarship-secondary-body">
+                <div class="scholarship-secondary-title">Explore More Grants</div>
+                <div class="scholarship-secondary-text">
+                    Check if you are eligible for other financial aid programs.
+                </div>
+                <button class="btn btn-outline" style="margin-top:0.75rem;" type="button" onclick="switchScholarshipTab('apply')">
+                    Apply Now
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active Scholarships Section - NOW SECOND -->
+    <div style="margin-bottom: 2rem;">
+        <h3 style="font-size: 1rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1rem;">ACTIVE SCHOLARSHIPS</h3>
+        <div class="scholarship-card-grid" id="activeScholarshipsContainer">
+            <!-- Default active scholarship -->
+            <div class="scholarship-main-card">
+                <div class="scholarship-main-header">
+                    <div class="scholarship-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 7L12 3 2 7l10 4 10-4z"></path>
+                            <path d="M6 10v6l6 3 6-3v-6"></path>
+                        </svg>
+                    </div>
+                    <span class="badge-pill badge-success-soft">Active</span>
+                </div>
+                <div class="scholarship-main-body">
+                    <div>
+                        <div class="scholarship-title">Academic Excellence</div>
+                        <div class="scholarship-subtitle">Merit Based</div>
+                        <div class="scholarship-meta">Discount Applied</div>
+                    </div>
+                    <div class="scholarship-amount">₱ 15,750</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pending Applications Section - KEEP AT BOTTOM -->
+    <div style="margin-bottom: 2rem;" id="pendingApplicationsSection">
+        <h3 style="font-size: 1rem; font-weight: 600; color: var(--gray-900); margin-bottom: 1rem;">PENDING APPLICATIONS</h3>
+        <div class="scholarship-card-grid" id="pendingScholarshipsContainer">
+            <!-- Pending applications will be inserted here dynamically -->
+        </div>
+    </div>
+</div>
+
+                <!-- Tab: Apply for Scholarship -->
+                <div id="scholarshipTabApply" style="display:none;">
+                    <div class="scholarship-apply-grid">
+                        <!-- Application form -->
+                        <div class="content-card animate-fade-in">
+                            <div class="card-header">
+                                <h3>Scholarship Application</h3>
+                                <span class="timestamp">Choose a program and upload your requirements</span>
+                            </div>
+                            <div class="form-container">
+                                <form id="scholarshipForm" onsubmit="submitScholarshipApplication(event)">
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label class="form-label" for="scholarshipType">Scholarship Type</label>
+                                            <select class="form-control" id="scholarshipType" required onchange="updateScholarshipEstimate()">
+                                                <option value="" selected disabled>Select scholarship</option>
+                                                <option value="academic_excellence">Academic Excellence (Merit Based)</option>
+                                                <option value="financial_assistance">Financial Assistance (Needs Based)</option>
+                                                <option value="athletic_grant">Athletic Grant</option>
+                                                <option value="leadership_grant">Leadership Grant</option>
+                                            </select>
+                                            <div class="form-text">Tip: pick the one that matches your current eligibility.</div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="form-label" for="scholarshipTerm">Term / Semester</label>
+                                            <select class="form-control" id="scholarshipTerm" required>
+                                                <option value="2nd Semester, AY 2024-2025" selected>2nd Semester, AY 2024-2025</option>
+                                                <option value="Summer, AY 2024-2025">Summer, AY 2024-2025</option>
+                                                <option value="1st Semester, AY 2025-2026">1st Semester, AY 2025-2026</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="form-label" for="scholarshipEstimate">Estimated Discount</label>
+                                            <input class="form-control" id="scholarshipEstimate" type="text" value="₱ 0.00" readonly>
+                                            <div class="form-text">This is a demo estimate shown for your prototype.</div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="form-label" for="scholarshipContact">Contact Number</label>
+                                            <input class="form-control" id="scholarshipContact" type="tel" placeholder="09XX XXX XXXX" required>
+                                        </div>
+
+                                        <div class="form-group form-grid-full">
+                                            <label class="form-label" for="scholarshipReason">Reason / Notes</label>
+                                            <textarea class="form-control form-control-textarea" id="scholarshipReason" rows="4" placeholder="Briefly explain your application (optional)"></textarea>
+                                        </div>
+
+                                        <div class="form-group form-grid-full">
+                                            <label class="form-label">Supporting Documents</label>
+                                            <div class="file-upload-box" id="scholarshipUploadBox">
+                                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                     style="margin: 0 auto; color: var(--primary);">
+                                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                                </svg>
+                                                <p style="margin-top: 1rem; font-weight: 600; color: var(--gray-900);">
+                                                    Click to upload or drag and drop
+                                                </p>
+                                                <p class="file-upload-text">PDF, PNG, JPG (max. 5MB each)</p>
+                                                <input type="file" id="scholarshipDocs" accept="image/*,.pdf" multiple style="display: none;" required>
+                                            </div>
+
+                                            <div class="docs-preview" id="scholarshipDocsPreview" style="display:none;">
+                                                <div class="docs-preview-header">
+                                                    <span class="docs-preview-title">Selected files</span>
+                                                    <button type="button" class="btn btn-outline btn-sm" onclick="clearScholarshipDocs()">Clear</button>
+                                                </div>
+                                                <div class="docs-list" id="scholarshipDocsList"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-actions">
+                                        <button type="button" class="btn btn-outline" onclick="resetScholarshipForm()">Reset</button>
+                                        <button type="submit" class="btn btn-primary">
+                                            Submit Application
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Scholarship Success Modal -->
+<div id="scholarshipSuccessModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-icon">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--emerald-600)" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 16v-4M12 8h.01"></path>
+                <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+        </div>
+        <h2 class="modal-title">Application Submitted!</h2>
+        <p class="modal-message">Your scholarship application has been successfully submitted and is now pending approval by the accounting department.</p>
+        <div class="modal-actions">
+            <button class="btn btn-primary" onclick="closeScholarshipSuccessModal()">OK</button>
+        </div>
+    </div>
+</div>
+
+                        
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleSidebar()"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
